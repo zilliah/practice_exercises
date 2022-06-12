@@ -20,5 +20,4 @@ function queueTime(customers, n) {
     }
   
     return time + (Math.max(...Object.values(queues)));
-  }
-  
+  }  
