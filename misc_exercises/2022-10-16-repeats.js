@@ -4,11 +4,11 @@
 // For example, repeats([4,5,7,5,4,8]) = 15 because only the numbers 7 and 8 occur once, and their sum is 15. Every other number occurs twice.
 
 function repeats(array) {
-    let sum = 0;
-    array.sort().filter((el,i) => {
-        if (array[i-1] !== el && array[i+1] !== el) sum += el;
-    });
-    return sum;
+    return array.sort().filter((el,i) => {
+        //check if the prev and next elements match
+        if (array[i-1] !== el && array[i+1] !== el) return true;
+        else return false;
+    }).reduce((a,b) => a + b);
 }
 
 console.log(repeats([4,5,7,5,4,8]),15);
